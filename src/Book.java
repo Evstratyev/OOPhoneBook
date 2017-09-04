@@ -8,27 +8,34 @@ public class Book {
 
         String[] arrname = new String[100];
 
+        int buf = 0;
         while (true) {
 
             System.out.println("Menu: " + "\n 1 - Add contact" + "\n 2 - Show all" + "\n 3 - Exit");
 
             System.out.print("Choise option: ");
             Scanner sc = new Scanner(System.in);
-            int ch = sc.nextInt();
+            int choise = sc.nextInt();
 
 
-            if (ch == 1) {
+            if (choise == 1) {
                 System.out.println("Enter name: ");
                 String name = sc.next();
 
-                for (int i = 0; i < arrname.length; i++) {
-                    if (arrname[i] == null) {
-                        arrname[i] = name;
-                        break;
-                    }
-                }
+//                for (int i = 0; i < arrname.length; i++) {
+//                    if (arrname[i] == null) {
+//                        arrname[i] = name;
+//                        break;
+//                    }
+//                }
 
-            } else if (ch == 2) {
+                int i;
+                i = buf;            //счетчик кол-ва записанных имен в массиве
+                arrname[i] = name;
+                buf++;
+
+
+            } else if (choise == 2) {
                 for (int i = 0; i < arrname.length; i++) {
                     if (arrname[i] != null) {
                         System.out.println(arrname[i]);
@@ -36,7 +43,7 @@ public class Book {
                 }
                 break;
 
-            } else if (ch == 3) {
+            } else if (choise == 3) {
                 break;
             }
         }
