@@ -6,46 +6,51 @@ import java.util.Scanner;
 public class Book {
     public static void main(String[] args) {
 
-        String[] arrname = new String[100];
+        Contacts[] phoneBook = new Contacts[5];
 
-        int buf = 0;
+        int arrnamecount = 0;
         while (true) {
 
-            System.out.println("Menu: " + "\n 1 - Add contact" + "\n 2 - Show all" + "\n 3 - Exit");
+            System.out.println("Menu: " + "\n 1 - Add contact" + "\n 2 - Show all" + "\n 3 - delete contact" + "\n 4 - Exit");
 
             System.out.print("Choise option: ");
             Scanner sc = new Scanner(System.in);
-            int choise = sc.nextInt();
+            int option = sc.nextInt();
 
 
-            if (choise == 1) {
-                System.out.println("Enter name: ");
-                String name = sc.next();
+            if (option == 1) {
+                System.out.print("Enter name: ");
+                phoneBook[arrnamecount] = new Contacts();
 
-//                for (int i = 0; i < arrname.length; i++) {
-//                    if (arrname[i] == null) {
-//                        arrname[i] = name;
-//                        break;
-//                    }
-//                }
+                phoneBook[arrnamecount].setName(sc.next());
 
-                int i;
-                i = buf;            //счетчик кол-ва записанных имен в массиве
-                arrname[i] = name;
-                buf++;
+                System.out.print("Enter phone: ");
+                phoneBook[arrnamecount].setPhone(sc.next());
 
+                System.out.print("Enter e-mail: ");
+                phoneBook[arrnamecount].setEmail(sc.next());
 
-            } else if (choise == 2) {
-                for (int i = 0; i < arrname.length; i++) {
-                    if (arrname[i] != null) {
-                        System.out.println(arrname[i]);
+                arrnamecount++;
+
+            } else if (option == 2) {
+                for (int i = 0; i < phoneBook.length; i++) {
+                    if (phoneBook[i] != null) {
+                        System.out.println(phoneBook[i].toString());
                     }
                 }
-                break;
 
-            } else if (choise == 3) {
-                break;
-            }
+
+            } else if (option == 3) {
+                System.out.print("Enter contact to delete: ");
+                String contactDelete = sc.next();
+                for (int i = 0; i < phoneBook.length; i++) {
+                    if (phoneBook[i].getName().equals(contactDelete)) {
+                        phoneBook[i] = null;
+                        break;
+                    }
+                }
+            } else break;
         }
     }
 }
+
