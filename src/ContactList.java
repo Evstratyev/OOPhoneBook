@@ -37,7 +37,7 @@ public class ContactList {
         return size;
     }
 
-    public Contacts get (int index){
+    public Contacts get (int index) {
         return arrayContactList[index];
     }
 }

@@ -10,7 +10,7 @@ public class Book {
 
         while (true) {
 
-            System.out.println("Menu: " + "\n 1 - Add contact" + "\n 2 - Show all" + "\n 3 - delete contact" + "\n 4 - Exit");
+            System.out.println("Menu: " + "\n 1 - Add contact " + "\n 2 - Show all" + "\n 3 - delete contact" + "\n 4 - Exit");
 
             System.out.print("Choise option: ");
             Scanner sc = new Scanner(System.in);
