@@ -3,42 +3,41 @@
  */
 public class ContactList {
 
-   private Contacts[] arrayContactList;
+   private Contacts[] contacts;
 
     public void add (Contacts contact){
 
-        if (arrayContactList == null){
-        arrayContactList = new Contacts[1];
-        arrayContactList[0] = contact;
+        if (contacts == null){
+        contacts = new Contacts[1];
+        contacts[0] = contact;
         } else {
-            Contacts[] temp = arrayContactList;
-            arrayContactList = new Contacts[arrayContactList.length + 1];
-            for (int i = 0; i < arrayContactList.length-1; i++){
-                arrayContactList[i] = temp[i];
-                arrayContactList[arrayContactList.length-1] = contact;
+            Contacts[] temp = contacts;
+            contacts = new Contacts[contacts.length + 1];
+            for (int i = 0; i < contacts.length-1; i++){
+                contacts[i] = temp[i];
             }
+            contacts[contacts.length-1] = contact;
         }
     }
 
     public void remove (int removeContactIndex){
 
-        Contacts[] temp = arrayContactList;
-        arrayContactList = new Contacts[arrayContactList.length-1];
+        Contacts[] temp = contacts;
+        contacts = new Contacts[contacts.length-1];
         for (int i = 0; i < removeContactIndex-1; i++){
-            arrayContactList[i] = temp[i];
+            contacts[i] = temp[i];
             }
-        for (int j = removeContactIndex-1; j < arrayContactList.length; j++){
-            arrayContactList[j] = temp[j+1];
+        for (int j = removeContactIndex-1; j < contacts.length; j++){
+            contacts[j] = temp[j+1];
         }
     }
 
     public int size (){
-        int size = arrayContactList.length;
-        return size;
+        return contacts.length;
     }
 
     public Contacts get (int index) {
-        return arrayContactList[index];
+        return contacts[index];
     }
 }
 
