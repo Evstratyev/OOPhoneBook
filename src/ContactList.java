@@ -12,7 +12,7 @@ public class ContactList {
         contacts[0] = contact;
         } else {
             Contacts[] temp = contacts;
-            contacts = new Contacts[contacts.length + 1];
+            contacts = new Contacts[contacts.length + 1]; //1
             for (int i = 0; i < contacts.length-1; i++){
                 contacts[i] = temp[i];
             }
