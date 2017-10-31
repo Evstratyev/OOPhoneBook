@@ -3,16 +3,16 @@
  */
 public class ContactList {
 
-   private Contacts[] contacts;
+   private Contact[] contacts;
 
-    public void add (Contacts contact){
+    public void add (Contact contact){
 
         if (contacts == null){
-        contacts = new Contacts[1];
+        contacts = new Contact[1];
         contacts[0] = contact;
         } else {
-            Contacts[] temp = contacts;
-            contacts = new Contacts[contacts.length + 1];
+            Contact[] temp = contacts;
+            contacts = new Contact[contacts.length + 1];
             for (int i = 0; i < contacts.length-1; i++){
                 contacts[i] = temp[i];
             }
@@ -22,8 +22,8 @@ public class ContactList {
 
     public void remove (int removeContactIndex){
 
-        Contacts[] temp = contacts;
-        contacts = new Contacts[contacts.length-1];
+        Contact[] temp = contacts;
+        contacts = new Contact[contacts.length-1];
         for (int i = 0; i < removeContactIndex-1; i++){
             contacts[i] = temp[i];
             }
@@ -36,7 +36,7 @@ public class ContactList {
         return contacts.length;
     }
 
-    public Contacts get (int index) {
+    public Contact get (int index) {
         return contacts[index];
     }
 }

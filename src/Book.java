@@ -19,7 +19,7 @@ public class Book {
 
             if (option == 1) {
                 System.out.print("Enter name: ");
-                Contacts newContact = new Contacts();
+                Contact newContact = new Contact();
                 newContact.setName(sc.next());
                 System.out.print("Enter phone: ");
                 newContact.setPhone(sc.next());

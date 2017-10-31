@@ -1,7 +1,7 @@
 /**
  * Created by Евген on 10.09.2017.
  */
-public class Contacts {
+public class Contact {
 
     private String name;
     private String phone;
